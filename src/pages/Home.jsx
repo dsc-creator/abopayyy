@@ -3,8 +3,6 @@ import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
 import Features from "../components/Features";
 import Footer from "../components/Footer";
-import { Link } from "react-router-dom";
-import { FiArrowRight } from "react-icons/fi";
 
 const HowItWorks = () => (
   <section id="how" className="py-24 relative">
@@ -45,7 +43,7 @@ const Home = () => (
     <Hero />
     <Features />
     <HowItWorks />
-    <Security />
+  
     <Footer />
   </div>
 );
