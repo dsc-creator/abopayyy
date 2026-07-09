@@ -58,7 +58,7 @@ const Features = () => (
           <span className="text-gradient">Banking Needs</span>
         </h2>
         <p className="section-sub max-w-lg mx-auto">
-          NairaBank brings together every financial service Nigerians need daily,
+          Abopay brings together every financial service Nigerians need daily,
           into one beautifully simple platform.
         </p>
       </div>
