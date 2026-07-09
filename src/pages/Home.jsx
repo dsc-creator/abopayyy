@@ -38,39 +38,6 @@ const HowItWorks = () => (
   </section>
 );
 
-const Security = () => (
-  <section id="security" className="py-24">
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div className="card-glass p-10 md:p-16 flex flex-col md:flex-row items-center justify-between gap-10 glow-green">
-        <div className="max-w-lg">
-          <span className="text-secondary font-dm text-sm font-medium tracking-widest uppercase">Bank-Grade Security</span>
-          <h2 className="section-title mt-3 mb-4">
-            Your Money is <span className="text-gradient">Safe With Us</span>
-          </h2>
-          <p className="section-sub mb-6">
-            We use 256-bit SSL encryption, two-factor authentication, and real-time fraud
-            monitoring to keep your account protected around the clock.
-          </p>
-          <div className="grid grid-cols-2 gap-4">
-            {["256-bit Encryption", "2FA Enabled", "NDIC Insured", "CBN Licensed", "24/7 Monitoring", "Zero Data Breach"].map((b, i) => (
-              <div key={i} className="flex items-center gap-2 text-white/60 font-dm text-sm">
-                <span className="text-secondary">✓</span> {b}
-              </div>
-            ))}
-          </div>
-        </div>
-        <div className="flex-shrink-0 text-center">
-          <div className="w-36 h-36 rounded-3xl bg-secondary/10 border border-secondary/20 flex items-center justify-center mx-auto mb-4">
-            <span className="text-6xl">🔐</span>
-          </div>
-          <Link to="/signup" className="btn-primary flex items-center gap-2 w-fit mx-auto">
-            Open Account <FiArrowRight size={14} />
-          </Link>
-        </div>
-      </div>
-    </div>
-  </section>
-);
 
 const Home = () => (
   <div className="bg-primary min-h-screen">
