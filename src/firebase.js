@@ -1,0 +1,32 @@
+import { initializeApp } from "firebase/app";
+import { getAuth } from "firebase/auth";
+import { getFirestore } from "firebase/firestore";
+import { getFunctions } from "firebase/functions";
+import { getAnalytics, isSupported } from "firebase/analytics";
+
+const firebaseConfig = {
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY || "AIzaSyDFNkPhGrIMfkFAPKMYuOf46T9jw8RUVlA",
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN || "abopay-53bc4.firebaseapp.com",
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID || "abopay-53bc4",
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET || "abopay-53bc4.firebasestorage.app",
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID || "923181784158",
+  appId: import.meta.env.VITE_FIREBASE_APP_ID || "1:923181784158:web:2404543da727d44c53a8cf",
+  measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID || "G-MBH4KPHK5Z",
+};
+
+const app = initializeApp(firebaseConfig);
+
+export const auth = getAuth(app);
+export const functions = getFunctions(app);
+// Used only by the Live Chat feature, which needs true real-time updates
+// that a REST API can't give you. Everything else in this app deliberately
+// goes through the api.js REST client (backed by requireAdmin-gated Vercel
+// functions) instead of touching Firestore directly from the browser.
+export const db = getFirestore(app);
+
+export let analytics = null;
+isSupported().then((supported) => {
+  if (supported) analytics = getAnalytics(app);
+});
+
+export default app;
