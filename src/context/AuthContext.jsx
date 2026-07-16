@@ -9,8 +9,7 @@ import {
   signInWithPopup,
   sendPasswordResetEmail,
 } from "firebase/auth";
-import { auth, functions } from "../firebase";
-import { httpsCallable } from "firebase/functions";
+import { auth } from "../firebase";
 import { api } from "../api";
 
 const AuthContext = createContext();
@@ -45,7 +44,7 @@ export const AuthProvider = ({ children }) => {
   // Fire-and-forget: records this sign-in for the admin Login Logs page.
   // Never blocks or fails the actual login on logging errors.
   const recordLogin = () => {
-    httpsCallable(functions, "logLogin")().catch(() => {});
+    api.post("/auth/log-login", {}).catch(() => {});
   };
 
   const login = async (email, password) => {
