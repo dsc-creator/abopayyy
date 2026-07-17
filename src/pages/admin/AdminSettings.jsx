@@ -96,8 +96,7 @@ const AdminSettings = () => {
               <div className="flex items-start gap-2 bg-yellow-500/10 border border-yellow-500/20 rounded-xl px-3 py-2.5">
                 <FiAlertTriangle className="text-yellow-400 mt-0.5 shrink-0" size={14} />
                 <p className="text-yellow-400 font-dm text-xs">
-                  This flag is stored, but nothing in functions/index.js reads it yet — wire a check into
-                  verifyDeposit/initiateTransfer/etc. for it to actually block anything. See ADMIN_SETUP.md.
+                  Deposits, transfers, and VTU purchases are currently blocked app-wide.
                 </p>
               </div>
             )}
@@ -123,8 +122,7 @@ const AdminSettings = () => {
         ) : tab === 1 ? (
           <div className="card-glass p-6 flex flex-col gap-4">
             <p className="text-white/30 font-dm text-xs mb-1">
-              Same as Maintenance Mode: these flags are stored and ready, but each Cloud Function needs a
-              one-line read of this doc to actually enforce the toggle. See ADMIN_SETUP.md for exactly where.
+              Turning a service off blocks that action for every user immediately.
             </p>
             {Object.entries(services).map(([key, val]) => (
               <div key={key} className="flex items-center justify-between">
@@ -145,11 +143,11 @@ const AdminSettings = () => {
                 <input type="number" step="0.1" className="input-field" defaultValue={pricing.transferFeePercent} onBlur={(e) => save({ pricing: { ...pricing, transferFeePercent: Number(e.target.value) } })} />
               </div>
               <div>
-                <label className="text-white/60 font-dm text-xs mb-1.5 block">Airtime Discount (%)</label>
+                <label className="text-white/60 font-dm text-xs mb-1.5 block">Airtime Markup (%)</label>
                 <input type="number" step="0.1" className="input-field" defaultValue={pricing.airtimeDiscountPercent} onBlur={(e) => save({ pricing: { ...pricing, airtimeDiscountPercent: Number(e.target.value) } })} />
               </div>
               <div>
-                <label className="text-white/60 font-dm text-xs mb-1.5 block">Data Discount (%)</label>
+                <label className="text-white/60 font-dm text-xs mb-1.5 block">Data Markup (%)</label>
                 <input type="number" step="0.1" className="input-field" defaultValue={pricing.dataDiscountPercent} onBlur={(e) => save({ pricing: { ...pricing, dataDiscountPercent: Number(e.target.value) } })} />
               </div>
               <div>
@@ -158,9 +156,9 @@ const AdminSettings = () => {
               </div>
             </div>
             <p className="text-white/30 font-dm text-xs">
-              Same caveat as the other tabs: these numbers are stored centrally, but purchaseAirtime/
-              purchaseData/payBill/initiateTransfer in functions/index.js need to read them when
-              calculating what to charge for this to take effect.
+              These charges apply immediately to every transfer/airtime/data/bill purchase — the customer
+              pays face value plus this fee/markup, minus any coupon discount (capped at the fee/markup
+              itself, so a coupon can never cost more than Abopay's own margin on that transaction).
             </p>
           </div>
         )}

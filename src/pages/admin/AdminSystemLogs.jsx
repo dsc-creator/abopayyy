@@ -34,15 +34,7 @@ const AdminSystemLogs = () => {
       <div className="p-5 lg:p-8 max-w-3xl">
         <div className="mb-6">
           <h1 className="font-syne font-bold text-white text-2xl">Cron Jobs & Logs</h1>
-          <p className="text-white/40 font-dm text-sm mt-1">System events from your Cloud Functions</p>
-        </div>
-
-        <div className="bg-yellow-500/10 border border-yellow-500/20 rounded-xl px-4 py-3 mb-6">
-          <p className="text-yellow-400 font-dm text-xs">
-            No scheduled (cron) jobs are set up in this project yet — this currently only logs
-            paystackWebhook errors. See the comment at the top of the system-logs endpoint in
-            ADMIN_SETUP.md for how to add scheduled functions and log their runs here.
-          </p>
+          <p className="text-white/40 font-dm text-sm mt-1">Webhook errors and VTU reconciliation cron activity</p>
         </div>
 
         {error && (

@@ -57,14 +57,21 @@ const AdminComms = () => {
           </button>
         </div>
 
-        <div className="bg-yellow-500/10 border border-yellow-500/20 rounded-xl px-4 py-3 mb-6">
-          <p className="text-yellow-400 font-dm text-xs">
-            {channel === "email"
-              ? "No email provider (Resend/SendGrid/Mailgun) is wired in yet — messages queue here but won't actually send until one is connected."
-              : "No SMS provider (Termii/Africa's Talking) is wired in yet — messages queue here but won't actually send until one is connected."}
-            {" "}See ADMIN_SETUP.md.
-          </p>
-        </div>
+        {channel === "email" ? (
+          <div className="bg-secondary/10 border border-secondary/20 rounded-xl px-4 py-3 mb-6">
+            <p className="text-secondary font-dm text-xs">
+              Sends via Resend to every user immediately. The free Resend tier caps at 100 emails/day —
+              broadcasting to more users than that in one day will start failing partway through.
+            </p>
+          </div>
+        ) : (
+          <div className="bg-yellow-500/10 border border-yellow-500/20 rounded-xl px-4 py-3 mb-6">
+            <p className="text-yellow-400 font-dm text-xs">
+              No SMS provider (Termii/Africa's Talking) is wired in yet — messages queue here but won't
+              actually send until one is connected.
+            </p>
+          </div>
+        )}
 
         {error && (
           <div className="bg-red-500/10 border border-red-500/20 rounded-xl px-4 py-3 mb-6 flex items-start gap-3">

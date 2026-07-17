@@ -119,8 +119,9 @@ const AdminMarketing = () => {
                 </button>
               </form>
               <p className="text-white/30 font-dm text-xs mt-3">
-                Note: nothing in the deposit/purchase flows redeems a coupon code yet — this manages the
-                catalog. Wiring redemption into verifyDeposit (or wherever makes sense) is a follow-up.
+                Redeemable on bank transfers, airtime, data, and bill payments — capped at that
+                transaction's fee/markup, so a coupon can never cost more than Abopay's own margin.
+                One redemption per user per code.
               </p>
             </div>
             {couponsLoading ? (
