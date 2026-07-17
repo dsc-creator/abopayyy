@@ -119,9 +119,10 @@ const AdminMarketing = () => {
                 </button>
               </form>
               <p className="text-white/30 font-dm text-xs mt-3">
-                Redeemable on bank transfers and bill payments — capped at that transaction's fee, so a
-                coupon can never cost more than Abopay's own margin. Not applicable to airtime/data, which
-                price off VTpass's wholesale discount instead of an added fee. One redemption per user per code.
+                Redeemable on bank transfers and electricity bills — capped at that transaction's fee, so a
+                coupon can never cost more than Abopay's own margin. Not applicable to airtime, data, or
+                cable, which price off the buying/selling catalog (Admin → Pricing Catalog) instead of an
+                added fee. One redemption per user per code.
               </p>
             </div>
             {couponsLoading ? (

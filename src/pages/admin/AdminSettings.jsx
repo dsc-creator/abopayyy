@@ -143,14 +143,6 @@ const AdminSettings = () => {
                 <input type="number" step="0.1" className="input-field" defaultValue={pricing.transferFeePercent} onBlur={(e) => save({ pricing: { ...pricing, transferFeePercent: Number(e.target.value) } })} />
               </div>
               <div>
-                <label className="text-white/60 font-dm text-xs mb-1.5 block">Airtime Discount (%)</label>
-                <input type="number" step="0.1" className="input-field" defaultValue={pricing.airtimeDiscountPercent} onBlur={(e) => save({ pricing: { ...pricing, airtimeDiscountPercent: Number(e.target.value) } })} />
-              </div>
-              <div>
-                <label className="text-white/60 font-dm text-xs mb-1.5 block">Data Discount (%)</label>
-                <input type="number" step="0.1" className="input-field" defaultValue={pricing.dataDiscountPercent} onBlur={(e) => save({ pricing: { ...pricing, dataDiscountPercent: Number(e.target.value) } })} />
-              </div>
-              <div>
                 <label className="text-white/60 font-dm text-xs mb-1.5 block">Bill Payment Fee (flat ₦)</label>
                 <input type="number" className="input-field" defaultValue={pricing.billFeeFlat} onBlur={(e) => save({ pricing: { ...pricing, billFeeFlat: Number(e.target.value) } })} />
               </div>
@@ -160,11 +152,9 @@ const AdminSettings = () => {
               coupon codes can discount these, capped so they never cost more than Abopay's own margin.
             </p>
             <p className="text-white/30 font-dm text-xs">
-              Airtime/Data Discount works the other way: VTpass sells these to Abopay below face value, so
-              this percentage is subtracted from what the customer pays (e.g. 2% off a ₦100 top-up charges
-              ₦98). Keep it below whatever wholesale margin VTpass actually gives this account — that rate
-              isn't visible from here, only in your VTpass dashboard/contract. No coupon codes on these two,
-              since there's no safe way to cap a further stacked discount without knowing that real rate.
+              Airtime, data, and cable pricing moved to <strong className="text-white/50">Admin → Pricing
+              Catalog</strong> — buying price vs. selling price per network/plan, since VTpass sells those
+              below face value rather than charging a flat percentage.
             </p>
           </div>
         )}

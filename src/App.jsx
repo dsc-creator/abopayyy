@@ -28,6 +28,7 @@ import AdminAdmins from "./pages/admin/AdminAdmins";
 import AdminAccountDeletions from "./pages/admin/AdminAccountDeletions";
 import AdminDisputes from "./pages/admin/AdminDisputes";
 import AdminFinance from "./pages/admin/AdminFinance";
+import AdminPricingCatalog from "./pages/admin/AdminPricingCatalog";
 import AdminSettings from "./pages/admin/AdminSettings";
 import AdminMarketing from "./pages/admin/AdminMarketing";
 import AdminPinRequests from "./pages/admin/AdminPinRequests";
@@ -69,6 +70,7 @@ function App() {
           <Route path="/admin/account-deletions" element={<AdminRoute><AdminAccountDeletions /></AdminRoute>} />
           <Route path="/admin/disputes" element={<AdminRoute><AdminDisputes /></AdminRoute>} />
           <Route path="/admin/finance" element={<AdminRoute><AdminFinance /></AdminRoute>} />
+          <Route path="/admin/pricing-catalog" element={<AdminRoute><AdminPricingCatalog /></AdminRoute>} />
           <Route path="/admin/settings" element={<AdminRoute><AdminSettings /></AdminRoute>} />
           <Route path="/admin/marketing" element={<AdminRoute><AdminMarketing /></AdminRoute>} />
           <Route path="/admin/pin-requests" element={<AdminRoute><AdminPinRequests /></AdminRoute>} />

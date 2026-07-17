@@ -129,9 +129,19 @@ const AdminFinance = () => {
                 <p className={`font-syne font-bold text-sm ${data.totals.netProfit >= 0 ? "text-secondary" : "text-red-400"}`}>{formatNaira(data.totals.netProfit)}</p>
               </div>
             </div>
+            <div className="card-glass p-4 mb-4">
+              <p className="text-white/35 font-dm text-[11px] uppercase mb-1">Real Margin</p>
+              <p className={`font-syne font-bold text-lg ${data.totals.totalMargin >= 0 ? "text-secondary" : "text-red-400"}`}>{formatNaira(data.totals.totalMargin)}</p>
+              <p className="text-white/30 font-dm text-[11px] mt-1">
+                Sum of actual recorded profit per transaction (Pricing Catalog margin on airtime/data/cable,
+                fee minus coupon discount on transfers/bills), minus expenses. More accurate than "Net
+                (est.)" below, but only as complete as what each purchase route records — deposits and
+                wallet transfers correctly contribute nothing here, they're not revenue.
+              </p>
+            </div>
             <p className="text-white/30 font-dm text-xs mb-4">
-              "Net" is a rough estimate (transaction volume minus logged expenses), not real accounting —
-              there's no fee-tracking system yet, so treat this directionally.
+              "Net (est.)" is a rough estimate (transaction volume minus logged expenses), not real
+              accounting — treat it directionally, "Real Margin" above is the accurate figure.
             </p>
             <div className="card-glass p-5 mb-6">
               <p className="text-white font-syne font-semibold text-sm mb-3">Log an expense</p>
