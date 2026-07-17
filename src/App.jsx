@@ -16,6 +16,7 @@ import Recharge from "./pages/Recharge";
 import Savings from "./pages/Savings";
 import Settings from "./pages/Settings";
 import Kyc from "./pages/Kyc";
+import SetPin from "./pages/SetPin";
 import AdminLogin from "./pages/admin/AdminLogin";
 import AdminDashboard from "./pages/admin/AdminDashboard";
 import AdminUsers from "./pages/admin/AdminUsers";
@@ -54,6 +55,7 @@ function App() {
           <Route path="/savings" element={<ProtectedRoute><Savings /></ProtectedRoute>} />
           <Route path="/settings" element={<ProtectedRoute><Settings /></ProtectedRoute>} />
           <Route path="/kyc" element={<ProtectedRoute><Kyc /></ProtectedRoute>} />
+          <Route path="/set-pin" element={<ProtectedRoute><SetPin /></ProtectedRoute>} />
 
           {/* Admin routes — require the `admin` custom claim on the Firebase ID token */}
           <Route path="/admin/login" element={<AdminLogin />} />
