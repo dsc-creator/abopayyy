@@ -101,9 +101,9 @@ const AdminFinance = () => {
             <div className="flex items-center justify-between mb-2">
               <p className="text-white/50 font-dm text-sm">Transaction volume — last {days} days</p>
               <select value={days} onChange={(e) => setDays(Number(e.target.value))} className="bg-white/5 border border-white/10 rounded-lg text-white/70 font-dm text-xs px-2 py-1">
-                <option value={7}>7 days</option>
-                <option value={30}>30 days</option>
-                <option value={90}>90 days</option>
+                <option value={7} style={{ backgroundColor: "#0d2248", color: "#fff" }}>7 days</option>
+                <option value={30} style={{ backgroundColor: "#0d2248", color: "#fff" }}>30 days</option>
+                <option value={90} style={{ backgroundColor: "#0d2248", color: "#fff" }}>90 days</option>
               </select>
             </div>
             <div className="grid grid-cols-3 gap-4 mt-4 mb-2">

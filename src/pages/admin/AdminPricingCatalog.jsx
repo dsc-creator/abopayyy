@@ -111,9 +111,9 @@ const AddServiceForm = ({ category, existingNetworks, onAdded }) => {
       ) : (
         <form onSubmit={add} className="flex flex-col gap-3">
           <select value={selected} onChange={(e) => setSelected(e.target.value)} className="bg-white/5 border border-white/10 rounded-xl text-white font-dm text-sm px-3 py-2.5">
-            <option value="">Select a service...</option>
+            <option value="" style={{ backgroundColor: "#0d2248", color: "#fff" }}>Select a service...</option>
             {candidates.map((c) => (
-              <option key={c.serviceID} value={c.serviceID}>{c.name} ({c.serviceID})</option>
+              <option key={c.serviceID} value={c.serviceID} style={{ backgroundColor: "#0d2248", color: "#fff" }}>{c.name} ({c.serviceID})</option>
             ))}
           </select>
 
@@ -130,7 +130,7 @@ const AddServiceForm = ({ category, existingNetworks, onAdded }) => {
 
           {mode === "merge" && category === "data" ? (
             <select value={mergeInto} onChange={(e) => setMergeInto(e.target.value)} className="bg-white/5 border border-white/10 rounded-xl text-white font-dm text-sm px-3 py-2.5 uppercase">
-              {existingNetworks.map((n) => <option key={n} value={n}>{n}</option>)}
+              {existingNetworks.map((n) => <option key={n} value={n} style={{ backgroundColor: "#0d2248", color: "#fff" }}>{n}</option>)}
             </select>
           ) : (
             <div className="flex gap-2">

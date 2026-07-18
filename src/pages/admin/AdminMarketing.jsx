@@ -110,8 +110,8 @@ const AdminMarketing = () => {
               <form onSubmit={createCoupon} className="flex flex-wrap gap-3">
                 <input value={code} onChange={(e) => setCode(e.target.value)} placeholder="CODE" className="input-field flex-1 min-w-[120px] uppercase" />
                 <select value={type} onChange={(e) => setType(e.target.value)} className="bg-white/5 border border-white/10 rounded-xl text-white font-dm text-sm px-3">
-                  <option value="percent">% off</option>
-                  <option value="fixed">₦ off</option>
+                  <option value="percent" style={{ backgroundColor: "#0d2248", color: "#fff" }}>% off</option>
+                  <option value="fixed" style={{ backgroundColor: "#0d2248", color: "#fff" }}>₦ off</option>
                 </select>
                 <input type="number" min="0" value={value} onChange={(e) => setValue(e.target.value)} placeholder="Value" className="input-field w-28" />
                 <button type="submit" disabled={creating} className="btn-primary !w-auto px-5 flex items-center gap-2 disabled:opacity-60">
